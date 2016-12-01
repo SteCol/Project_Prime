@@ -12,8 +12,11 @@ public class Bullet : MonoBehaviour {
 	void Update () {
         //transform.localPosition = new Vector3(transform.position.x + speed * Time.deltaTime, 0, 0);
 
-        this.transform.Translate(0, 0, speed * Time.deltaTime);
-	}
+        //this.transform.Translate(0, 0, speed * Time.deltaTime);
+
+        this.transform.GetComponent<Rigidbody>().velocity = transform.forward * ( 0.5f + speed )* 100;
+    }
+
 
     void OnCollisionEnter(Collision collision)
     {
@@ -26,12 +29,11 @@ public class Bullet : MonoBehaviour {
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag != "Bullet")
+        if (collision.gameObject.tag != "Bullet" && collision.gameObject.tag != "MainCamera")
         {
             GameObject clone = (GameObject)Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
             Destroy(this.gameObject);
 
         }
-
     }
 }

@@ -25,9 +25,9 @@ public class Gun : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space) && reloadValue > 1)
         {
-            GameObject clone = (GameObject)Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            GameObject clone = (GameObject)Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y , transform.position.z + 1.0f), transform.rotation);
             clone.transform.localScale = new Vector3(shotValue + 0.1f, shotValue + 0.1f, shotValue + 0.1f);
-            clone.GetComponent<Bullet>().speed = shotValue * 200;
+            clone.GetComponent<Bullet>().speed = shotValue;
             shotValue = 0f;
             reloadValue = 0f;
 
@@ -35,7 +35,11 @@ public class Gun : MonoBehaviour
 
         barrel.transform.localPosition = new Vector3(0, 0, reloadValue / 5);
 
-        barrel.transform.localScale = new Vector3(shotValue + 1f, 0.1f, shotValue + 1f);
+        //recoil
+        //transform.localPosition = new Vector3(0, 0, reloadValue / 20);
+
+
+        barrel.transform.localScale = new Vector3(shotValue + 1f, barrel.transform.localScale.y, shotValue + 1f);
     }
 
     void BarrelAnimation() {
