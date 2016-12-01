@@ -1,0 +1,207 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   Project_Prime_Unity/Assets/Circle.psd
+#	new file:   Project_Prime_Unity/Assets/Circle.psd.meta
+#	new file:   Project_Prime_Unity/Assets/RedWireFrame.mat
+#	new file:   Project_Prime_Unity/Assets/RedWireFrame.mat.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Autotarget.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Autotarget.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Bullet.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Bullet.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Bullet.prefab
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Bullet.prefab.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/CubeRotator.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/CubeRotator.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Explosion.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Explosion.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Explosion.prefab
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Explosion.prefab.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Gun.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Gun.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/LockCursor.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/LockCursor.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Movement.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Movement.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Pulser.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/Pulser.cs.meta
+#	new file:   Project_Prime_Unity/Assets/Test_1.unity
+#	new file:   Project_Prime_Unity/Assets/Test_1.unity.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Documentation.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Documentation/WireframeShader-Overview.pdf
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Documentation/WireframeShader-Overview.pdf.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Rainbow Wireframe.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Rainbow Wireframe.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Cutout Double-Sided.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Cutout Double-Sided.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Cutout.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Cutout.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Double-Sided.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Double-Sided.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Man.fbx
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Man.fbx.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/Default_Material.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/Default_Material.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/Material.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/Material.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/blinn1.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/blinn1.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/blinn2.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/blinn2.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/lambert1.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/lambert1.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/unnamed.mat
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/Materials/unnamed.mat.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/cat.fbx
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/cat.fbx.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/land.fbx
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Models/land.fbx.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Scenes.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Scenes/WireframeTest 1.unity
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Scenes/WireframeTest 1.unity.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Scenes/WireframeTest 2.unity
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Scenes/WireframeTest 2.unity.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Cutout Wireframe.shader
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Cutout Wireframe.shader.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Double-Sided Cutout Wireframe.shader
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Double-Sided Cutout Wireframe.shader.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Double-Sided Wireframe.shader
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Double-Sided Wireframe.shader.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Wireframe Functions.cginc
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Wireframe Functions.cginc.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Wireframe.shader
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Shaders/UCLA GameLab Wireframe.shader.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Textures.meta
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Textures/Rainbow.psd
+#	new file:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Textures/Rainbow.psd.meta
+#	new file:   Project_Prime_Unity/Assets/WireFrame.shader
+#	new file:   Project_Prime_Unity/Assets/WireFrame.shader.meta
+#	new file:   Project_Prime_Unity/Library/AnnotationManager
+#	new file:   Project_Prime_Unity/Library/AssetImportState
+#	new file:   Project_Prime_Unity/Library/AssetServerCacheV3
+#	new file:   Project_Prime_Unity/Library/AssetVersioning.db
+#	new file:   Project_Prime_Unity/Library/BuildPlayer.prefs
+#	new file:   Project_Prime_Unity/Library/BuildSettings.asset
+#	new file:   Project_Prime_Unity/Library/CurrentLayout.dwlt
+#	new file:   Project_Prime_Unity/Library/CurrentMaximizeLayout.dwlt
+#	new file:   Project_Prime_Unity/Library/EditorUserBuildSettings.asset
+#	new file:   Project_Prime_Unity/Library/EditorUserSettings.asset
+#	new file:   Project_Prime_Unity/Library/InspectorExpandedItems.asset
+#	new file:   Project_Prime_Unity/Library/LastSceneManagerSetup.txt
+#	new file:   Project_Prime_Unity/Library/LibraryFormatVersion.txt
+#	new file:   Project_Prime_Unity/Library/assetDatabase3
+#	new file:   Project_Prime_Unity/Library/expandedItems
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000001000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000001000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000002000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000002000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000003000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000003000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000004000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000004000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000004100000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000004100000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000005000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000005000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000005100000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000005100000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000006000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000006000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000006100000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000006100000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000007000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000007000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000007100000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000007100000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000008000000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000008000000000000000.info
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000008100000000000000
+#	new file:   Project_Prime_Unity/Library/metadata/00/00000000000000008100000000000000.info
+#
+# Changes not staged for commit:
+#	modified:   README.md
+#
+# Untracked files:
+#	Project_Prime_Unity/Library/MonoManager.asset
+#	Project_Prime_Unity/Library/ProjectSettings.asset
+#	Project_Prime_Unity/Library/ScriptAssemblies/
+#	Project_Prime_Unity/Library/ScriptMapper
+#	Project_Prime_Unity/Library/ShaderCache.db
+#	Project_Prime_Unity/Library/ShaderCache/
+#	Project_Prime_Unity/Library/UnityAssemblies/
+#	Project_Prime_Unity/Library/metadata/00/00000000000000009000000000000000
+#	Project_Prime_Unity/Library/metadata/00/00000000000000009000000000000000.info
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000a000000000000000
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000a000000000000000.info
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000a100000000000000
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000a100000000000000.info
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000b000000000000000
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000b000000000000000.info
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000c000000000000000
+#	Project_Prime_Unity/Library/metadata/00/0000000000000000c000000000000000.info
+#	Project_Prime_Unity/Library/metadata/01/
+#	Project_Prime_Unity/Library/metadata/07/
+#	Project_Prime_Unity/Library/metadata/08/
+#	Project_Prime_Unity/Library/metadata/09/
+#	Project_Prime_Unity/Library/metadata/0a/
+#	Project_Prime_Unity/Library/metadata/0e/
+#	Project_Prime_Unity/Library/metadata/11/
+#	Project_Prime_Unity/Library/metadata/14/
+#	Project_Prime_Unity/Library/metadata/15/
+#	Project_Prime_Unity/Library/metadata/25/
+#	Project_Prime_Unity/Library/metadata/2f/
+#	Project_Prime_Unity/Library/metadata/33/
+#	Project_Prime_Unity/Library/metadata/37/
+#	Project_Prime_Unity/Library/metadata/3a/
+#	Project_Prime_Unity/Library/metadata/3c/
+#	Project_Prime_Unity/Library/metadata/42/
+#	Project_Prime_Unity/Library/metadata/4b/
+#	Project_Prime_Unity/Library/metadata/4e/
+#	Project_Prime_Unity/Library/metadata/5d/
+#	Project_Prime_Unity/Library/metadata/5f/
+#	Project_Prime_Unity/Library/metadata/64/
+#	Project_Prime_Unity/Library/metadata/66/
+#	Project_Prime_Unity/Library/metadata/72/
+#	Project_Prime_Unity/Library/metadata/73/
+#	Project_Prime_Unity/Library/metadata/76/
+#	Project_Prime_Unity/Library/metadata/7c/
+#	Project_Prime_Unity/Library/metadata/80/
+#	Project_Prime_Unity/Library/metadata/81/
+#	Project_Prime_Unity/Library/metadata/82/
+#	Project_Prime_Unity/Library/metadata/85/
+#	Project_Prime_Unity/Library/metadata/87/
+#	Project_Prime_Unity/Library/metadata/8a/
+#	Project_Prime_Unity/Library/metadata/8c/
+#	Project_Prime_Unity/Library/metadata/8e/
+#	Project_Prime_Unity/Library/metadata/97/
+#	Project_Prime_Unity/Library/metadata/ad/
+#	Project_Prime_Unity/Library/metadata/b3/
+#	Project_Prime_Unity/Library/metadata/b9/
+#	Project_Prime_Unity/Library/metadata/bc/
+#	Project_Prime_Unity/Library/metadata/c8/
+#	Project_Prime_Unity/Library/metadata/c9/
+#	Project_Prime_Unity/Library/metadata/ce/
+#	Project_Prime_Unity/Library/metadata/cf/
+#	Project_Prime_Unity/Library/metadata/e3/
+#	Project_Prime_Unity/Library/metadata/ea/
+#	Project_Prime_Unity/Library/metadata/f2/
+#	Project_Prime_Unity/Library/metadata/f5/
+#	Project_Prime_Unity/Library/metadata/f6/
+#	Project_Prime_Unity/Library/metadata/fa/
+#	Project_Prime_Unity/Library/shadercompiler-UnityShaderCompiler.exe0.log
+#	Project_Prime_Unity/ProjectSettings/
+#
+
