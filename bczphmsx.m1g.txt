@@ -1,0 +1,68 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   Project_Prime_Unity/Assets/Materials.meta
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Bullet.mat
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Bullet.mat.meta
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Enemy.mat
+#	renamed:    Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe.mat.meta -> Project_Prime_Unity/Assets/Materials/Wireframe Enemy.mat.meta
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Floor.mat
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Floor.mat.meta
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Yellow.mat
+#	new file:   Project_Prime_Unity/Assets/Materials/Wireframe Yellow.mat.meta
+#	modified:   Project_Prime_Unity/Assets/TestScripts/Autotarget.cs
+#	modified:   Project_Prime_Unity/Assets/TestScripts/Bullet.cs
+#	modified:   Project_Prime_Unity/Assets/TestScripts/Bullet.prefab
+#	new file:   Project_Prime_Unity/Assets/TestScripts/CheckIfOnScreen.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/CheckIfOnScreen.cs.meta
+#	modified:   Project_Prime_Unity/Assets/TestScripts/Explosion.prefab
+#	modified:   Project_Prime_Unity/Assets/TestScripts/Gun.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/GunAnimation.cs
+#	new file:   Project_Prime_Unity/Assets/TestScripts/GunAnimation.cs.meta
+#	new file:   Project_Prime_Unity/Assets/TestScripts/LockOnGraphic.meta
+#	deleted:    Project_Prime_Unity/Assets/TestScripts/LockOnGraphic.prefab
+#	new file:   Project_Prime_Unity/Assets/TestScripts/LockOnGraphic/LockOnGraphic.prefab
+#	renamed:    Project_Prime_Unity/Assets/TestScripts/LockOnGraphic.prefab.meta -> Project_Prime_Unity/Assets/TestScripts/LockOnGraphic/LockOnGraphic.prefab.meta
+#	modified:   Project_Prime_Unity/Assets/TestScripts/Pulser.cs
+#	modified:   Project_Prime_Unity/Assets/Test_1.unity
+#	modified:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Cutout Double-Sided.mat
+#	modified:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Cutout.mat
+#	modified:   Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe Double-Sided.mat
+#	deleted:    Project_Prime_Unity/Assets/UCLAGameLab/Wireframe/Materials/Wireframe.mat
+#	modified:   Project_Prime_Unity/Library/CurrentLayout.dwlt
+#	modified:   Project_Prime_Unity/Library/InspectorExpandedItems.asset
+#	modified:   Project_Prime_Unity/Library/ScriptAssemblies/Assembly-CSharp.dll
+#	modified:   Project_Prime_Unity/Library/assetDatabase3
+#	modified:   Project_Prime_Unity/Library/metadata/00/00000000000000003000000000000000
+#	modified:   Project_Prime_Unity/Library/metadata/00/00000000000000003000000000000000.info
+#	modified:   Project_Prime_Unity/Library/metadata/01/019466160e4e2f7409f1e582431bf409
+#	modified:   Project_Prime_Unity/Library/metadata/01/019466160e4e2f7409f1e582431bf409.info
+#	modified:   Project_Prime_Unity/Library/metadata/09/097b51d400f87c24193f3686d4e2478f
+#	modified:   Project_Prime_Unity/Library/metadata/09/097b51d400f87c24193f3686d4e2478f.info
+#	modified:   Project_Prime_Unity/Library/metadata/2f/2f9ce7a5a4c6e8046888b14d9390aad0
+#	modified:   Project_Prime_Unity/Library/metadata/2f/2f9ce7a5a4c6e8046888b14d9390aad0.info
+#	modified:   Project_Prime_Unity/Library/metadata/37/370d440014578314faa9476f95545dfb
+#	modified:   Project_Prime_Unity/Library/metadata/37/370d440014578314faa9476f95545dfb.info
+#	modified:   Project_Prime_Unity/Library/metadata/3a/3ae9a0a642b08224a916cb8b47e41965
+#	modified:   Project_Prime_Unity/Library/metadata/42/42b5980e765d36a40b7766683bf66c88
+#	modified:   Project_Prime_Unity/Library/metadata/42/42b5980e765d36a40b7766683bf66c88.info
+#	modified:   Project_Prime_Unity/Library/metadata/66/66accc47f915ce8438dc72587a02d8a5
+#	modified:   Project_Prime_Unity/Library/metadata/66/66accc47f915ce8438dc72587a02d8a5.info
+#	modified:   Project_Prime_Unity/Library/metadata/8c/8c01d0306d0fd354c90ea755d194993e
+#	modified:   Project_Prime_Unity/Library/metadata/8c/8c01d0306d0fd354c90ea755d194993e.info
+#	modified:   Project_Prime_Unity/Library/metadata/b3/b32739538a682ec4ebed92fcaecfca21
+#	modified:   Project_Prime_Unity/Library/metadata/b3/b32739538a682ec4ebed92fcaecfca21.info
+#	modified:   Project_Prime_Unity/Library/metadata/ce/ce871a69ff21b58458b2673ae0e65ee0
+#	modified:   Project_Prime_Unity/Library/metadata/ce/ce871a69ff21b58458b2673ae0e65ee0.info
+#
+# Changes not staged for commit:
+#	modified:   Project_Prime_Unity/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+#	modified:   Project_Prime_Unity/Library/shadercompiler-UnityShaderCompiler.exe0.log
+#	modified:   Project_Prime_Unity/ProjectSettings/TagManager.asset
+#
+

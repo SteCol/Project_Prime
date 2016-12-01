@@ -19,14 +19,19 @@ public class Bullet : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Shootable")
         {
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Autotarget>().shootable.Remove(collision.gameObject);
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Pulser>().toPulse.Remove(collision.gameObject);
 
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Autotarget>().inRange.Remove(collision.gameObject);
             Destroy(collision.gameObject);
         }
 
-        GameObject clone = (GameObject)Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        if (collision.gameObject.tag != "Bullet")
+        {
+            GameObject clone = (GameObject)Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            Destroy(this.gameObject);
 
-        Destroy(this.gameObject);
+        }
+
     }
 }

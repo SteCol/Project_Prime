@@ -9,9 +9,12 @@ public class Autotarget : MonoBehaviour {
     public float range;
     public Pulser pulser;
 
+    public GameObject[] shootableArray;
+    public List<GameObject> shootable;
+
     public List<GameObject> inRange;
     public List<float> inRangeDist;
-    public List<float> inRangeSort;
+    //public List<float> inRangeSort;
     public int inRangeSortValue;
     public float acclimatisationRate;
     public float minRange;
@@ -22,6 +25,7 @@ public class Autotarget : MonoBehaviour {
 
     public GameObject rangeCirkle;
     public GameObject lockOnCirkle;
+    public GameObject lookAt;
 
 
 
@@ -29,6 +33,15 @@ public class Autotarget : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        shootableArray = GameObject.FindGameObjectsWithTag("Shootable");
+       // shootable = shootableArray;
+
+        foreach (GameObject shootableObj in GameObject.FindGameObjectsWithTag("Shootable"))
+        {
+
+            shootable.Add(shootableObj);
+        }
 
         //coroutine = GetDistance();
         //StartCoroutine(coroutine);
@@ -38,7 +51,6 @@ public class Autotarget : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        //DrawRangeCirkle();
 
         GetDistance();
         if (Input.GetKeyDown("f"))
@@ -55,20 +67,11 @@ public class Autotarget : MonoBehaviour {
             minRange = minRange + acclimatisationRate;
         }
 
-        if (inRange.Count > 0 &&  inRange[0].GetComponent<Renderer>().isVisible == true)
-        {
-
-            
-
-        }
-
         DrawLine();
         DrawLockOnCirkle();
+        DrawRangeCirkle();
+        
         SmoothAim();
-
-
-
-
     }
 
     void SmoothAim() {
@@ -79,6 +82,12 @@ public class Autotarget : MonoBehaviour {
 
                 Quaternion rotation = Quaternion.LookRotation(inRange[0].transform.position - g.transform.position);
                 g.transform.rotation = Quaternion.Slerp(g.transform.rotation, rotation, Time.deltaTime * damping);
+            }
+            else
+            {
+                Quaternion rotation = Quaternion.LookRotation(lookAt.transform.position - g.transform.position);
+                g.transform.rotation = Quaternion.Slerp(g.transform.rotation, rotation, Time.deltaTime * damping);
+
             }
         }
     }
@@ -92,25 +101,22 @@ public class Autotarget : MonoBehaviour {
     }
 
     void GetDistance() {
-        //Debug.Log("Starting core routine");
         inRange.Clear();
         inRangeDist.Clear();
-        for (int i = 0; i < pulser.toPulse.Count; i++)
+
+        for (int i = 0; i < shootable.Count; i++)
         {
-            if (pulser.toPulse[i].tag == "Shootable")
+            if (shootable[i].GetComponent<CheckIfOnScreen>() != null && shootable[i].tag == "Shootable" &&  shootable[i].GetComponent<CheckIfOnScreen>().onScreen == true)
             {
-                float dist = Vector3.Distance(this.transform.position, pulser.toPulse[i].transform.position);
+                float dist = Vector3.Distance(this.transform.position, shootable[i].transform.position);
                 if (dist < minRange)
                 {
-                    inRange.Add(pulser.toPulse[i]);
+                    inRange.Add(shootable[i]);
 
-                    //inRange.Insert(inRange.Count, pulser.toPulse[i]);
                     inRangeDist.Add(dist);
-                    //yield return new WaitForSeconds(0.1f);
                 }
             }
         }
-        //Debug.Log("Finished core routine");
     }
 
     void DrawRangeCirkle() {
@@ -120,7 +126,7 @@ public class Autotarget : MonoBehaviour {
         {
             if (rangeCirkle.active == false)
                 rangeCirkle.active = true;
-            rangeCirkle.transform.localScale = new Vector3(inRangeDist[0] / 2, inRangeDist[0] / 2, inRangeDist[0] / 2);
+            rangeCirkle.transform.localScale = new Vector3( inRangeDist[0] / 60, inRangeDist[0] / 60, inRangeDist[0] / 60);
         }
         else if (rangeCirkle.active == true)
         {
@@ -130,7 +136,7 @@ public class Autotarget : MonoBehaviour {
 
     void DrawLockOnCirkle()
     {
-        //Range Cirkle
+        //Lockon Cirkle
 
         if (inRangeDist.Count > 0)
         {
