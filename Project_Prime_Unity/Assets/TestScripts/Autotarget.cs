@@ -20,7 +20,9 @@ public class Autotarget : MonoBehaviour {
 
     public List<GameObject> guns;
 
-    public GameObject cirkle;
+    public GameObject rangeCirkle;
+    public GameObject lockOnCirkle;
+
 
 
     private IEnumerator coroutine;
@@ -36,7 +38,7 @@ public class Autotarget : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        DrawCirkle();
+        //DrawRangeCirkle();
 
         GetDistance();
         if (Input.GetKeyDown("f"))
@@ -53,9 +55,19 @@ public class Autotarget : MonoBehaviour {
             minRange = minRange + acclimatisationRate;
         }
 
-        DrawLine();
+        if (inRange.Count > 0 &&  inRange[0].GetComponent<Renderer>().isVisible == true)
+        {
 
+            
+
+        }
+
+        DrawLine();
+        DrawLockOnCirkle();
         SmoothAim();
+
+
+
 
     }
 
@@ -101,7 +113,35 @@ public class Autotarget : MonoBehaviour {
         //Debug.Log("Finished core routine");
     }
 
-    void DrawCirkle() {
-        cirkle.transform.localScale = new Vector3(minRange/2, minRange/2, minRange/2);
+    void DrawRangeCirkle() {
+        //Range Cirkle
+
+        if (inRangeDist.Count > 0)
+        {
+            if (rangeCirkle.active == false)
+                rangeCirkle.active = true;
+            rangeCirkle.transform.localScale = new Vector3(inRangeDist[0] / 2, inRangeDist[0] / 2, inRangeDist[0] / 2);
+        }
+        else if (rangeCirkle.active == true)
+        {
+            rangeCirkle.active = false;
+        }
+    }
+
+    void DrawLockOnCirkle()
+    {
+        //Range Cirkle
+
+        if (inRangeDist.Count > 0)
+        {
+            if (lockOnCirkle.active == false)
+                lockOnCirkle.active = true;
+            lockOnCirkle.transform.position = inRange[0].transform.position;
+            lockOnCirkle.transform.LookAt(this.transform.position);
+        }
+        else if (lockOnCirkle.active == true)
+        {
+            lockOnCirkle.active = false;
+        }
     }
 }
