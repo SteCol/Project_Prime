@@ -9,6 +9,7 @@ public class LockOn : MonoBehaviour {
     public Camera playerCamera;
 
     public bool lockOn;
+    private float mouseSpeed;
 
     [Header("All the lists")]
     public GameObject[] shootableArray;
@@ -24,6 +25,8 @@ public class LockOn : MonoBehaviour {
     public GameObject lockOnCirkle;
     public GameObject lookAt, lookAtB;
     public GameObject lookAtGimble;
+    public float manualAimSlerp;
+    public float LockOnCircleSize;
 
     [Header("Guns")]
     public List<GameObject> guns;
@@ -33,6 +36,8 @@ public class LockOn : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        mouseSpeed = GetComponent<Movement>().mouseSpeed;
+
         playerCamera = Camera.main;
 
         cameraZoomLevel = playerCamera.fieldOfView;
@@ -64,6 +69,7 @@ public class LockOn : MonoBehaviour {
         if (Input.GetMouseButtonUp(1))
         {
             lockOn = false;
+            LockOnCircleSize = 0;
         }
         
 
@@ -78,9 +84,20 @@ public class LockOn : MonoBehaviour {
 
         SmoothAim();
 
-        if (closestShootable == null)
-            lookAtGimble.GetComponent<LookAtGimble>().matchRotation = new Vector3(lookAtGimble.GetComponent<LookAtGimble>().matchRotation.x, lookAtGimble.GetComponent<LookAtGimble>().matchRotation.y, Input.GetAxis("Mouse Y"));
+        if (closestShootable == null && lockOn == true)
+        {
+            lookAtB.transform.Translate(0, Input.GetAxis("Mouse Y") * mouseSpeed / 50, 0);
+            manualAimSlerp = 0;
+            //lookAtGimble.transform.Rotate(Vector3.up * Input.GetAxis("Mouse Y") * Time.deltaTime, Space.World);
+            //lookAtGimble.GetComponent<LookAtGimble>().matchRotation = new Vector3(lookAtGimble.GetComponent<LookAtGimble>().matchRotation.x, lookAtGimble.GetComponent<LookAtGimble>().matchRotation.y, Input.GetAxis("Mouse Y"));
+        }
+        else {
+            Vector3 newPos = new Vector3(lookAtB.transform.position.x, 0, lookAtB.transform.position.z);
+            if (manualAimSlerp < 1)
+                manualAimSlerp = manualAimSlerp + 1 * Time.deltaTime;
+            lookAtB.transform.position = Vector3.Slerp(lookAtB.transform.position, newPos, manualAimSlerp);
 
+        }
     }
 
     void CheckIfOnScreen() {
@@ -187,9 +204,12 @@ public class LockOn : MonoBehaviour {
     {
         //Lockon Cirkle
 
+        if (LockOnCircleSize < 1)
+            LockOnCircleSize = LockOnCircleSize + 2 * Time.deltaTime;
+
         float dist = Vector3.Distance(transform.position, lockOnCirkle.transform.position);
 
-        lockOnCirkle.transform.localScale = new Vector3(dist / 60, dist / 60, dist / 60);
+        lockOnCirkle.transform.localScale = new Vector3((dist * LockOnCircleSize) / 80, (dist * LockOnCircleSize) / 80, (dist * LockOnCircleSize) / 80);
 
 
         if (closestShootable != null && closestShootable.GetComponent<CheckIfOnScreen>().onScreen == true && lockOn)
