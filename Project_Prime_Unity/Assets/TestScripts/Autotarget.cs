@@ -25,8 +25,10 @@ public class Autotarget : MonoBehaviour {
 
     public GameObject rangeCirkle;
     public GameObject lockOnCirkle;
-    public GameObject lookAt;
+    public GameObject lookAt, lookAtB;
 
+    public bool autoTarget;
+    public float cameraZoomLevel;
 
 
     private IEnumerator coroutine;
@@ -51,27 +53,54 @@ public class Autotarget : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-
-        GetDistance();
-        if (Input.GetKeyDown("f"))
+        if (Input.GetMouseButton(1))
+            autoTarget = true;
+        else if (Input.GetMouseButtonUp(1))
         {
-            //StartCoroutine(coroutine);
+
+            autoTarget = false;
         }
 
 
-        if (inRange.Count > 1) {
-            minRange = minRange - acclimatisationRate;
-        }
-        else if (inRange.Count < 1  && minRange < range)
-        {
-            minRange = minRange + acclimatisationRate;
-        }
-
-        DrawLine();
-        DrawLockOnCirkle();
-        DrawRangeCirkle();
         
-        SmoothAim();
+
+
+            GetDistance();
+
+            if (inRange.Count > 1)
+            {
+                minRange = minRange - acclimatisationRate;
+            }
+            else if (inRange.Count < 1 && minRange < range)
+            {
+                minRange = minRange + acclimatisationRate;
+            }
+        
+
+            DrawLine();
+            DrawLockOnCirkle();
+            DrawRangeCirkle();
+
+            SmoothAim();
+        CameraZoom();
+        
+    }
+
+    void CameraZoom() {
+        if (autoTarget == true)
+        {
+            Camera.main.GetComponent<Camera>().fieldOfView = cameraZoomLevel-5;
+            //SmoothLookAt
+            Quaternion rotation = Quaternion.LookRotation(inRange[0].transform.position - Camera.main.transform.position);
+            Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, rotation, Time.deltaTime * damping/3);
+        }
+        else {
+            Camera.main.GetComponent<Camera>().fieldOfView = cameraZoomLevel;
+            //Camera.main.transform.eulerAngles = new Vector3(0,Camera.main.transform.eulerAngles.y,0);
+
+            Quaternion rotation = Quaternion.LookRotation(lookAtB.transform.position - Camera.main.transform.position);
+            Camera.main.transform.rotation = Quaternion.Slerp(Camera.main.transform.rotation, rotation, Time.deltaTime * damping / 3);
+        }
     }
 
     void SmoothAim() {
@@ -79,7 +108,7 @@ public class Autotarget : MonoBehaviour {
         {
             if (inRange.Count > 0)
             {
-
+                //SmoothLookAt
                 Quaternion rotation = Quaternion.LookRotation(inRange[0].transform.position - g.transform.position);
                 g.transform.rotation = Quaternion.Slerp(g.transform.rotation, rotation, Time.deltaTime * damping);
             }
@@ -106,7 +135,7 @@ public class Autotarget : MonoBehaviour {
 
         for (int i = 0; i < shootable.Count; i++)
         {
-            if (shootable[i].GetComponent<CheckIfOnScreen>() != null && shootable[i].tag == "Shootable" &&  shootable[i].GetComponent<CheckIfOnScreen>().onScreen == true)
+            if (shootable[i].GetComponent<CheckIfOnScreen>() != null && shootable[i].tag == "Shootable" &&  shootable[i].GetComponent<CheckIfOnScreen>().onScreen == true && autoTarget == true)  
             {
                 float dist = Vector3.Distance(this.transform.position, shootable[i].transform.position);
                 if (dist < minRange)
