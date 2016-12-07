@@ -27,6 +27,7 @@ public class LockOn : MonoBehaviour {
     public GameObject lookAtGimble;
     public float manualAimSlerp;
     public float LockOnCircleSize;
+    public float minDist;
 
     [Header("Guns")]
     public List<GameObject> guns;
@@ -70,6 +71,7 @@ public class LockOn : MonoBehaviour {
         {
             lockOn = false;
             LockOnCircleSize = 0;
+            closestShootable = null;
         }
         
 
@@ -145,7 +147,7 @@ public class LockOn : MonoBehaviour {
 
         //Find closest GameObject to center.
         for (int i = 0; i < distanceFromCenter.Count; i++) {
-            if (distanceFromCenter[i] == Mathf.Min(distanceFromCenter.ToArray())){
+            if (distanceFromCenter[i] == Mathf.Min(distanceFromCenter.ToArray()) && distanceFromCenter[i] < minDist){
                 closestShootable = shootableOnScreen[i];
             }
         }

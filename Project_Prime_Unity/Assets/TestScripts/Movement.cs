@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Movement : MonoBehaviour {
+public class Movement : MonoBehaviour
+{
+
+    public Rigidbody rb;
 
     public float movementSpeed;
     public float maxSpeed;
     public float mouseSpeed;
+    public float gravity;
 
     public bool jump, jumping;
     public float jumpTimer, jumpValue;
@@ -15,7 +19,8 @@ public class Movement : MonoBehaviour {
 
     public MovementTech movementTech;
 
-    void Update () {
+    void Update()
+    {
 
         FloorCheck();
 
@@ -41,7 +46,8 @@ public class Movement : MonoBehaviour {
 
     }
 
-    public void TransformMovement() {
+    public void TransformMovement()
+    {
         //Walking with transform
         transform.Translate(Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime, 0.0f, Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime);
 
@@ -56,7 +62,8 @@ public class Movement : MonoBehaviour {
 
     }
 
-    public void TransformJump() {
+    public void TransformJump()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && onFloor)
         {
             jumping = true;
@@ -78,15 +85,17 @@ public class Movement : MonoBehaviour {
         {
             jumpTimer = jumpTimer + 1 * Time.deltaTime;
         }
-        else if (jumpTimer > 0) {
+        else if (jumpTimer > 0)
+        {
             jumpTimer = jumpTimer - 1 * Time.deltaTime;
         }
 
         if (jumping)
-        transform.Translate(0, jumpHeight * Time.deltaTime, 0);
+            transform.Translate(0, jumpHeight * Time.deltaTime, 0);
     }
 
-    public void FloorCheck() {
+    public void FloorCheck()
+    {
 
         Vector3 dwn = transform.TransformDirection(-Vector3.up);
         Vector3 from = new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z);
@@ -99,27 +108,51 @@ public class Movement : MonoBehaviour {
             onFloor = false;
     }
 
-    public void PhysicsMovement() {
+    public void PhysicsMovement()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        float moveUp = gravity;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            this.gameObject.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * 10);
 
-        Vector3 movement = new Vector3(moveHorizontal , -0.5f, moveVertical);
+        
+
+        Vector3 forwardVel = transform.forward * movementSpeed * moveVertical;
+        Vector3 horizontalVel = transform.right * movementSpeed * moveHorizontal;
+        Vector3 jumpVel = new Vector3(0,0,0);
+
+
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+             jumpVel = Vector3.up * moveUp;
+        }
+        else {
+             jumpVel = -Vector3.up * moveUp;
+        }
+
+
+
+        //Vector3 movement = new Vector3(moveHorizontal , -0.5f, moveVertical);
         //this.gameObject.GetComponent<Rigidbody>().velocity = movement * movementSpeed;
 
-        this.gameObject.GetComponent<Rigidbody>().AddRelativeForce(movement * movementSpeed * 10);
+        //rb.AddRelativeForce(movement * movementSpeed * 100);
 
-        if (this.gameObject.GetComponent<Rigidbody>().velocity.magnitude > maxSpeed)
-        {
-            this.gameObject.GetComponent<Rigidbody>().velocity = this.gameObject.GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
-        }
+        //if (rb.velocity.magnitude < maxSpeed)
+        //{
+        //rb.velocity = new Vector3(moveHorizontal * movementSpeed, 0, moveVertical * movementSpeed);
+        rb.velocity = forwardVel + horizontalVel + jumpVel;
+
+        if (Input.GetKeyDown(KeyCode.Space) && onFloor)
+            rb.AddRelativeForce(Vector3.up * 100);
+
+        //}
 
     }
 }
 
-public enum MovementTech{
+public enum MovementTech
+{
     Transform,
     Physics
 }

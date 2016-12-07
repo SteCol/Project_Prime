@@ -33,9 +33,13 @@ public class Pulser : MonoBehaviour {
         {
             for (int i = 0; i < toPulse.Count; i++)
             {
-                Renderer rend = toPulse[i].GetComponent<Renderer>();
-                //toPulse[i].GetComponent<Renderer>().material.shader = Shader.Find("UCLA Game Lab/Wireframe/Double-Sided");
-                toPulse[i].GetComponent<Renderer>().material.SetFloat("_Thickness", Random.Range(minPulse, maxPulse));
+
+                if (toPulse[i].GetComponent<Renderer>() != null)
+                {
+                    Renderer rend = toPulse[i].GetComponent<Renderer>();
+                    //toPulse[i].GetComponent<Renderer>().material.shader = Shader.Find("UCLA Game Lab/Wireframe/Double-Sided");
+                    toPulse[i].GetComponent<Renderer>().material.SetFloat("_Thickness", Random.Range(minPulse, maxPulse));
+                }
 
             }
         }
