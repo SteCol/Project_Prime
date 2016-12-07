@@ -18,7 +18,7 @@ public class LookAtGimble : MonoBehaviour {
         if (transform.position != toFollow.transform.position)
             transform.position = toFollow.transform.position;
 
-        transform.eulerAngles = new Vector3(0, toFollow.transform.eulerAngles.y, 0);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, toFollow.transform.eulerAngles.y, transform.eulerAngles.z);
 		
 	}
 }
